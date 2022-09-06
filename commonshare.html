@@ -1,0 +1,627 @@
+<div class="swiper-view mount-swiper">
+    <div class="swiper-container" id="swiperMount">
+        <div class="swiper-wrapper">
+        </div>
+    </div>
+  </div>
+<div class="tc_tssc_bj4"></div>
+<div class="sharediv comsharediv"><span class="fxhb-span generate_poster" data-type="" data-share-type="" data-weibo-id="" data-uid="{$mid}" weibo-pic="" user-pic="" circle-pic="" circle-title="" data-nickname="" data-content="" data-title="" data-url=""><img src="__STATIC__/artist/img/share01.png" alt=""/>生成分享海报</span><span class="fxhy-span fx_ny" data-type="" data-weibo-id="" data-uid="{$mid}" weibo-pic="" user-pic="" circle-pic="" circle-title="" data-nickname="" data-content="" data-linetitle="" data-title="" data-url=""><img src="__STATIC__/artist/img/share02.png" class="wx" alt=""/>分享微信好友</span><span class="fxpyq-span fx_ny" data-type="" data-weibo-id="" data-uid="{$mid}" weibo-pic="" user-pic="" circle-pic="" circle-title="" data-nickname="" data-content="" data-linetitle="" data-title="" data-url=""><img src="__STATIC__/artist/img/share03.png" alt=""/>分享到朋友圈</span>
+    <button>取消</button>
+</div>
+<div class="fxqz_div userfxqz_div">
+    <p class="fx-title">长按保存或分享</p>
+    <div class="clock-div userclock"></div>
+    <div class="fx-bg userbg">
+        <div class="fximgdiv">
+            <img class="fximg" src="__STATIC__/artist/img/img16.jpg" alt=""/>
+        </div>
+        <div class="fx-head"><img src="{$user.avatar64}" alt=""/></div>
+        <div class="fx-title"><em class="user-nickname">{$user.nickname|nickFormat}</em>
+            <p>在美术家<br>
+                第<b class="poster_user_day">{$user.uid|get_user_day}</b>天</p>
+            <div class="clear"></div>
+        </div>
+        <div class="fx-content">
+            <p>向你推荐@<span>{$user.nickname|nickFormat}</span><br><em><i>{$user.follows|default=0}</i>&nbsp;关注&nbsp;&nbsp;|&nbsp;&nbsp;<i>{$user.fans|default=0}</i>&nbsp;粉丝&nbsp;&nbsp;|&nbsp;&nbsp;<i>{$user.weibo_pic_count|intval}</i>&nbsp;作品</em></p>
+            <div class="pfloat_r">
+                <div class="fx-ewm"><span>扫码关注</span><img src="__STATIC__/artist/img/ewm.jpg" alt=""/></div>
+            </div>
+            <div class="fx-jszc">美术家——<br>让画画更有趣</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <img class="fx-img" id="userzy" src="__STATIC__/artist/img/preset.gif" alt="" style="display:block;" />
+</div>
+<div class="fxqz_div fxqz_div_zp">
+    <if condition="checknewzy($mid,18,0) lt 1">
+        <div class="yd15" data-zy="{$mid|checknewzy=18,0}" style="display:none;"><img src="__STATIC__/artist/img/newhb_icon.gif" alt=""/></div>
+        <script>
+            $(".yd15").click(function () {
+                $.get(U('Home/Home/setadv'), {type: 18}, function (data) {
+                    console.log(data);
+                });
+                $(this).hide();
+            });
+        </script>
+    </if>
+    <div class="fx-title fx-title-notsuc">长按保存海报或发送给微信好友</div>
+    <div class="clock-div fximg-close com-fximg-close"></div>
+    <div class="swiper-container" id="swipertwo">
+        <div class="swiper-wrapper">
+            <include file="Public/newshareposter" />
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg02 fx-bgdiv">
+                    <div class="fx-title01"><div class="lefttitle"><img src="__STATIC__/artist/img/hb009.png" width="85%" alt=""></div><span class="middletitle">{$mid|get_user_day}</span><div class="righttitle"><img src="__STATIC__/artist/img/hb010.png" width="85%" alt=""></div><div class="clear"></div></div>
+                    <div class="fx-head fx-head01"><img src="__STATIC__/artist/img/5.jpg" alt=""/><span class="fx-headname">{$owner.nickname|nickFormat}</span><div class="clear"></div></div>
+                    <div class="fx-title02">来自<span>《{$info.title}》圈子</span>的作品分享</div>
+                    <div class="fximgdiv fximgdiv01"><div class="overdiv"><img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div></div>
+                    <div class="fx-content fx-content01">
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"><span>扫码关注</span><img src="__STATIC__/artist/img/mr2.png" alt=""/></div>
+                        </div>
+                        <div class="fx-jszc fx-jszc01"><img src="__STATIC__/artist/img/fxhblogo1.png" width="72%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg04 fx-bgdiv">
+                    <img src="__STATIC__/artist/img/fxhbpng.png" class="bjtpimg3" alt="">
+                    <img src="{$info.picture|getImageUrlByPath=0}" class="bjtpimg" alt="">
+                    <div class="fx-title01"><div class="lefttitle"><img src="__STATIC__/artist/img/hb016.png" width="100%" alt=""></div><span class="middletitle">{$mid|get_user_day}</span><div class="righttitle"><img src="__STATIC__/artist/img/hb017.png" width="100%" alt=""></div><div class="clear"></div></div>
+                    <div class="fximgdiv fximgdiv01"><div class="overdiv"><img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div></div>
+                    <div class="fx-xzys01">
+                        <img src="__STATIC__/artist/img/hb015.png" class="bjtpimg2" alt="">
+                        <div class="fx-head fx-head01">
+                            <img src="__STATIC__/artist/img/5.jpg" alt=""/>
+                            <span class="fx-headname">{$owner.nickname|nickFormat}</span>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="fx-title02">来自<span>《{$info.title}》圈子</span>的作品分享</div>
+                    </div>
+                    <div class="fx-content fx-content01">
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"><span>扫码关注</span><img src="__STATIC__/artist/img/mr2.png" alt=""/></div>
+                        </div>
+                        <div class="fx-jszc fx-jszc01"><img src="__STATIC__/artist/img/fxhblogo2.png" width="72%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg01 fx-bgdiv">
+                    <div class="fx-title01"><div class="lefttitle"><img src="__STATIC__/artist/img/hb002.png" width="100%" alt=""></div><span class="middletitle">{$mid|get_user_day}</span><div class="righttitle"><img src="__STATIC__/artist/img/hb003.png" width="100%" alt=""></div><div class="clear"></div></div>
+                    <div class="fx-head fx-head01"><img src="__STATIC__/artist/img/5.jpg" alt=""/><span class="fx-headname">{$owner.nickname|nickFormat}</span><div class="clear"></div></div>
+                    <div class="fx-title02">来自<span>《{$info.title}》圈子</span>的作品分享</div>
+                    <div class="fximgdiv fximgdiv01"><div class="overdiv"><img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div><div class="topfximgdiv"></div><div class="bottomfximgdiv"></div></div>
+                    <div class="fx-content fx-content01">
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"><span>扫码关注</span><img src="__STATIC__/artist/img/mr2.png" alt=""/></div>
+                        </div>
+                        <div class="fx-jszc fx-jszc01"><img src="__STATIC__/artist/img/fxhblogo3.png" width="72%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg03 fx-bgdiv">
+                    <div class="fx-title01"><div class="lefttitle"><img src="__STATIC__/artist/img/hb012.png" width="100%" alt=""></div><span class="middletitle">{$mid|get_user_day}</span><div class="righttitle"><img src="__STATIC__/artist/img/hb013.png" width="100%" alt=""></div><div class="clear"></div></div>
+                    <div class="fx-head fx-head01"><img src="__STATIC__/artist/img/5.jpg" alt=""/><span class="fx-headname">{$owner.nickname|nickFormat}</span><div class="clear"></div></div>
+                    <div class="fx-title02">来自<span>《{$info.title}》圈子</span>的作品分享</div>
+                    <div class="fximgdiv fximgdiv01"><div class="fximgdiv001"><div class="overdiv"><img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div></div><div class="bottomfximgdiv"></div></div>
+                    <div class="fx-content fx-content01">
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"><span>扫码关注</span><img src="__STATIC__/artist/img/mr2.png" alt=""/></div>
+                        </div>
+                        <div class="fx-jszc fx-jszc01"><img src="__STATIC__/artist/img/fxhblogo4.png" width="72%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg05 fx-bgdiv">
+                    <img class="fx-bgimg" src="__STATIC__/artist/img/hb022.png" alt=""/>
+                    <div class="fx-title01"><div class="lefttitle"><img src="__STATIC__/artist/img/hb019.png" width="100%" alt=""></div><span class="middletitle">{$mid|get_user_day}</span><div class="righttitle"><img src="__STATIC__/artist/img/hb003.png" width="100%" alt=""></div><div class="clear"></div></div>
+                    <div class="fx-head fx-head01"><img src="__STATIC__/artist/img/5.jpg" alt=""/><span class="fx-headname">{$owner.nickname|nickFormat}</span><div class="clear"></div></div>
+                    <div class="fx-title02">来自<span>《{$info.title}》圈子</span>的作品分享</div>
+                    <div class="fximgdiv fximgdiv01"><div class="overdiv"><img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div><div class="bottomfximgdiv"></div></div>
+                    <div class="fx-content fx-content01">
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"><span>扫码关注</span><img src="__STATIC__/artist/img/mr2.png" alt=""/></div>
+                        </div>
+                        <div class="fx-jszc fx-jszc01"><img src="__STATIC__/artist/img/fxhblogo5.png" width="72%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg06 fx-bgdiv">
+                    <div class="fx-title01">
+                        <div class="lefttitle">
+                            <img src="__STATIC__/artist/img/hb024.png" width="100%" alt=""></div><span class="middletitle">{$mid|get_user_day}</span><div class="righttitle"><img src="__STATIC__/artist/img/hb025.png" width="100%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="fximgdiv fximgdiv01"><div class="fximgdiv01o2"><div class="fximgdiv001"><div class="fximgdiv001o"><div class="fx-bg06xzys"><img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div><div class="fx-xzys01"><div class="fx-head fx-head01"><img src="__STATIC__/artist/img/5.jpg" alt=""/><span class="fx-headname">{$owner.nickname|nickFormat}</span><div class="clear"></div></div>
+                                        <div class="fx-title02">来自<span>《{$info.title}》圈子</span>的作品分享</div>
+                                    </div></div></div></div><div class="topfximgdiv"></div><div class="bottomfximgdiv"></div></div>
+                    <div class="fx-content fx-content01">
+                        <div class="fx-ewm fx-ewm01"><img src="__STATIC__/artist/img/mr2.png" alt=""/></div>
+                        <div class="fx-jszc fx-jszc01"><img src="__STATIC__/artist/img/fxhblogo6.png" width="72%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg07 fx-bgdiv">
+                    <img class="fx-bgimg" src="__STATIC__/artist/img/hb029.png" alt=""/>
+                    <div class="fx-head fx-head01"><img src="__STATIC__/artist/img/5.jpg" alt=""/><span class="fx-headname">{$owner.nickname|nickFormat}</span><div class="clear"></div></div>
+                    <div class="fx-title02">来自<span>《{$info.title}》圈子</span>的作品分享</div>
+                    <div class="fximgdiv fximgdiv01"><div class="overdiv"><img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div></div>
+                    <div class="fx-title01"><div class="lefttitle"><img src="__STATIC__/artist/img/hb030.png" width="100%" alt=""></div><span class="middletitle">{$mid|get_user_day}</span><div class="righttitle"><img src="__STATIC__/artist/img/hb031.png" width="100%" alt=""></div><div class="clear"></div></div>
+                    <div class="fx-content fx-content01">
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"><span>扫码关注</span><img src="__STATIC__/artist/img/mr2.png" alt=""/></div>
+                        </div>
+                        <div class="fx-jszc fx-jszc01"><img src="__STATIC__/artist/img/fxhblogo7.png" width="80%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                    <img class="fx-bgimg2" src="__STATIC__/artist/img/hb028_2.png" alt=""/>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg08 fx-bgdiv">
+                    <div class="fx-title01"><div class="lefttitle">加入美术家的第</div><span class="middletitle">{$mid|get_user_day}</span><div class="righttitle">天</div><div class="clear"></div></div>
+                    <div class="fx-head fx-head01"><img src="__STATIC__/artist/img/5.jpg" alt=""/><span class="fx-headname">{$owner.nickname|nickFormat}</span><div class="clear"></div></div>
+                    <div class="fx-title02">来自<span>《{$info.title}》圈子</span>的作品分享</div>
+                    <div class="fximgdiv fximgdiv01"><div class="overdiv"><img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div><div class="topfximgdiv"></div><div class="bottomfximgdiv"></div></div>
+                    <div class="fx-content fx-content01">
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"><span>扫码关注</span><img src="__STATIC__/artist/img/mr2.png" alt=""/></div>
+                        </div>
+                        <div class="fx-jszc fx-jszc01"><img src="__STATIC__/artist/img/fxhblogo8.png" width="72%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg09 fx-bgdiv">
+                    <div class="fx-title01"><div class="lefttitle"><img src="__STATIC__/artist/img/hb033.png" width="92%" alt=""></div><span class="middletitle">{$mid|get_user_day}</span><div class="righttitle"><img src="__STATIC__/artist/img/hb034.png" width="92%" alt=""></div><div class="clear"></div></div>
+                    <div class="fximgdiv fximgdiv01"><div class="overdiv"><img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div></div>
+                    <div class="fx-head fx-head01"><img src="__STATIC__/artist/img/5.jpg" alt=""/><span class="fx-headname">{$owner.nickname|nickFormat}</span><div class="clear"></div></div>
+                    <div class="fx-title02">来自<span>《{$info.title}》圈子</span>的作品分享</div>
+                    <div class="fx-content fx-content01">
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"><span>扫码关注</span><img src="__STATIC__/artist/img/mr2.png" alt=""/></div>
+                        </div>
+                        <div class="fx-jszc fx-jszc01"><img src="__STATIC__/artist/img/fxhblogo9.png" width="72%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg10 fx-bgdiv">
+                    <div class="fx-title01"><div class="lefttitle"><img src="__STATIC__/artist/img/hb033.png" width="100%" alt=""></div><span class="middletitle">{$mid|get_user_day}</span><div class="righttitle"><img src="__STATIC__/artist/img/hb034.png" width="100%" alt=""></div><div class="clear"></div></div>
+                    <div class="fximgdiv fximgdiv01"><div class="overdiv"><img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div></div>
+                    <div class="fx-head fx-head01"><img src="__STATIC__/artist/img/5.jpg" alt=""/><span class="fx-headname">{$owner.nickname|nickFormat}</span><div class="clear"></div></div>
+                    <div class="fx-title02">来自<span>《{$info.title}》圈子</span>的作品分享</div>
+                    <div class="fx-content fx-content01">
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"><span>扫码关注</span><img src="__STATIC__/artist/img/mr2.png" alt=""/></div>
+                        </div>
+                        <div class="fx-jszc fx-jszc01"><img src="__STATIC__/artist/img/fxhblogo10.png" width="45%" alt=""></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+            <div class="swiper-slide">
+                <div class="fx-bg fx-bg11 fx-bgdiv">
+                    <div class="fx-title01">
+                        <img src="__STATIC__/artist/img/fxhblogo11.png" width="100%" alt=""/>
+                    </div> 
+                    <div class="fx-bg11connent">
+                        <div class="overdiv">
+                            <img class="fximg" src="__STATIC__/artist/img/grzxbj.jpg" alt="">
+                        </div>
+                        <img src="__STATIC__/artist/img/img19-2.jpg" width="88%" alt=""/>
+                    </div>
+                    <div class="fx-head fx-head01 fx-content11"><img src="__STATIC__/artist/img/5.jpg" alt=""><span class="fx-headname">{$owner.nickname|nickFormat}</span>
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"><img src="__STATIC__/artist/img/mr2.png" alt=""></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <img class="bottombg" src="__STATIC__/artist/img/fxhblogo11bg.png" width="100%" alt=""/>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/> 
+            </div>
+            <div class="swiper-slide swiper-slide-guoqing">
+                <div class="fx-bg fx-bg12 fx-bgdiv">
+                    <div class="fx-title12">
+                        <img src="__STATIC__/artist/img/hb35logo.png" class="leftlogo" width="32%" alt=""/>
+                        <div class="fx-titleright">
+                            <div>NATIONAL DAY</div>
+                            <div class="bnumnber">2021</div>
+                        </div>
+                    </div>
+                    <img class="fximgbg2" src="__STATIC__/artist/img/hb35bg.png" alt=""/>
+                    <img class="fximgtop" src="__STATIC__/artist/img/hb35tit.png" alt=""/>
+                    <div class="fximgdiv fximgdiv01 fximgdiv12">
+                        <div class="overdiv"><img class="fximg" src="__STATIC__/artist/img/img18.jpg" alt=""/></div>
+                        <img class="fximglogo" src="__STATIC__/artist/img/hb35logo2.png" alt=""/>
+                    </div>
+                    <div class="fx-content fx-content01">
+                        <div class="pfloat_r">
+                            <div class="fx-ewm fx-ewm01"></div>
+                        </div>
+                        <div class="fx-jszc fx-jszc12"><img class="guoqingmr" src="__STATIC__/artist/img/mr2.png" alt=""></div>
+                        <img class="fximgbg3" src="__STATIC__/artist/img/hb35bg2.png" alt=""/>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img class="fx-img wbfximg" src="__STATIC__/artist/img/preset.gif" alt=""/>
+            </div>
+        </div>
+        <div class="Qz-zy">
+            <div class="Index">
+                <div class="pl_div">
+                    <div class="new-quanzi hbfxpy" style="display:none;"><a href="javascript:void(0);">长按保存/分享给朋友<img class="a-img" src="" alt=""/></a></div>
+                    <!--<div class="new-quanzi yshys"><a href="javascript:void(0);">长按保存或分享</a></div>-->
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination"></div>
+    </div>
+</div>
+<div class="fxqz_div fxqz_new_div">
+    <p class="fx-title">长按保存或分享</p>
+    <div class="clock-div fxgz-close"></div>
+    <div class="fx-bg fx-bgcirdiv">	
+        <div class="fximgdiv">
+            <!--<img class="fximg" src="{$info.picture|getImageUrlByPath=0}" alt=""/></div>-->
+            <img class="fximg" src="__STATIC__/artist/img/img15.jpg" alt=""/></div>
+        <div class="fx-head"><img src="{$owner.avatar64}" alt=""/></div>
+        <div class="fx-title"><em>{$info.owner|query_user="nickname", ###}</em>
+            <p>我在美术家<br>
+                第<b class="poster_user_day">{$mid|get_user_day}</b>天</p>
+            <div class="clear"></div>
+        </div>
+        <div class="fx-content">
+            <p>向你推荐一个有趣的圈子<span class="poster_cirtitle">《{$info.title}》</span></p>
+            <div class="pfloat_r">
+                <div class="fx-ewm"><span>扫码关注</span><img src="__STATIC__/artist/img/ewm.jpg" alt=""/></div>
+            </div>
+            <div class="fx-jszc">美术家——<br>让画画更有趣</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <img class="fx-img" id='fxgzqr' src="__STATIC__/artist/img/preset.gif" alt="找不到图片" />
+</div>
+<div class="fxcj_div fxys_div">
+    <p class="fx-title">长按保存或分享</p>
+    <div class="clock-div fxys-close"></div>
+    <div class="fx-bg">
+        <div class="content-div">
+            <div class="fx-head"><img src="{$userdetail.avatar64}" alt=""/></div>
+            <div class="cj-title">
+                <p>{$userdetail.uid|query_user="nickname", ###}</p>
+                <span>向你分享一个有趣的圈子：<br>
+                    <i>《{$info.title}》</i></span></div>
+            <div class="fx-ewm"><img src="__STATIC__/artist/img/ewm.jpg" alt=""/><span>扫码关注</span></div>
+            <div class="fx-content">
+                <div class="fx-jszc">美术家——<br>
+                    让画画更有趣</div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <img class="fx-img" id='fx_fyqr' src="__STATIC__/artist/img/img18.jpg" alt="找不到图片"/>
+</div>
+<div class="loading-div"></div>
+<div class="tc_div_bj fenxiangtupian" style="display:none;"></div>
+<script type="text/javascript" src="__ARTIST__/js/canvas2image.js?v={$js_version}"></script>
+<script type="text/javascript" src="__ARTIST__/js/html2canvas.js?v={$js_version}"></script>
+<script type="text/javascript" src="__ARTIST__/js/htmltopicture.js?v={$js_version}"></script>
+<script>
+            $(function () {
+                var nowindex = 0;
+                var monthSwiperHmtl = '';
+                var calendarIndexs = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+                $('.monthSwiper').each(function(k,v){
+                    monthSwiperHmtl += '<div class="swiper-slide monthSwiper">'+$(v).html()+'</div>';
+                });
+                var tabsSwiper = new Swiper('#swipertwo', {
+                    onSlideChangeEnd: function (d) {
+                        var fxbg_index = d.activeIndex;
+                        nowindex = d.activeIndex;
+                        $('.a-img').attr('src', $('.wbfximg').eq(nowindex).attr('src'));
+                        if (!$('.wbfximg').eq(fxbg_index).hasClass('ischangesuc')) {
+                            $('.loading-div').show();
+                            convert2canvas($('.fxqz_div_zp').find('.fx-bgdiv')[fxbg_index], $('.wbfximg').eq(fxbg_index), $('.fx-bgdiv').eq(fxbg_index));
+                            $('.wbfximg').eq(fxbg_index).addClass('ischangesuc').css('display', 'block');
+                        }
+                        next_index = nowindex + 1;
+                        if (next_index < $('.wbfximg').size() && !$('.wbfximg').eq(next_index).hasClass('ischangesuc')) {
+                            if (next_index == 0) {
+                                $('.bjtpimg').attr('src', data.weibo_pic);
+                            }
+                            convert2canvas($('.fxqz_div_zp').find('.fx-bgdiv')[next_index], $('.wbfximg').eq(next_index), $('.fx-bgdiv').eq(next_index));
+                            $('.wbfximg').eq(next_index).addClass('ischangesuc').css('display', 'block');
+                        }
+                        prev_index = nowindex - 1;
+                        if (prev_index >= 0 && !$('.wbfximg').eq(prev_index).hasClass('ischangesuc')) {
+                            if (prev_index == 0) {
+                                $('.bjtpimg').attr('src', data.weibo_pic);
+                            }
+                            convert2canvas($('.fxqz_div_zp').find('.fx-bgdiv')[prev_index], $('.wbfximg').eq(prev_index), $('.fx-bgdiv').eq(prev_index));
+                            $('.wbfximg').eq(prev_index).addClass('ischangesuc').css('display', 'block');
+                        }
+                    },
+                    pagination: '.pagination',
+                    direction: 'horizontal',
+                    observer: true, //修改swiper自己或子元素时，自动初始化swiper
+                    observeParents: true, //修改swiper的父元素时，自动初始化swiper
+                });
+                setTimeout(function () {
+                    var H = $(window).height();
+                    $("#swipertwo").css('height', H + 'px');
+                }, 1000);
+                function sharedivcat(ishide = 0) {
+                    if (ishide == 1) {
+                        $(".comsharediv").animate({
+                            bottom: "-999px"
+                        }, 500, "swing");
+                        $(".tc_tssc_bj4").fadeOut();
+                    } else {
+                        $(".comsharediv").animate({
+                            bottom: "2%"
+                        }, 500, "swing");
+                        $(".tc_tssc_bj4").css('z-index','1010').fadeIn();
+                }
+                }
+                $(document).on("click", ".tc_tssc_bj4", function () {
+                    $(".comsharediv,.sharediv").animate({
+                        bottom: "-999px"
+                    }, 500, "swing");
+                    $(".tc_tssc_bj4").fadeOut();
+                });
+                $(document).on('click', ".fxyico em", function () {
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('data-type', $(this).attr('data-type'));
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('data-weibo-id', $(this).attr('data-weibo-id'));
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('weibo-pic', $(this).attr('weibo-pic'));
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('user-pic', $(this).attr('user-pic'));
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('data-nickname', $(this).attr('data-nickname'));
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('circle-title', $(this).attr('circle-title'));
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('data-title', $(this).attr('data-title'));
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('data-url', $(this).attr('data-url'));
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('data-content', $(this).attr('data-content'));
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('data-share-type', $(this).attr('data-share-type'));
+                    $('.generate_poster,.fxhy-span,.fxpyq-span').attr('data-linetitle', $(this).attr('data-linetitle'));
+                    if (!$(this).hasClass('fx_ny')) {
+                        sharedivcat(0);
+                    }
+                    if (isAndroid && player !== null) {
+                        player.pause();
+                        $('.prism-player').hide();
+                        $('.videoimg').show();
+                    }
+                });
+                var sEventHandle = {
+                    fOut: function () {
+                        sharedivcat(1);
+                    },
+                    share: function (shareData) {
+                        shareHandle(shareData);
+                        sharedivcat(1);
+                    }
+                };
+                $(".comsharediv span").click(function () {
+                    if ($('.tjgz_div').size() > 0) {
+                        sharedivcat(1);
+                    } else {
+                        var shareData = {
+                            imgUrl: $(this).attr('weibo-pic'),
+                            sendFriendLink: $(this).attr('data-url'),
+                            tContent: $(this).attr('data-content'),
+                            tTitle: $(this).attr('data-title'),
+                            lineTitle: $(this).attr('data-linetitle')
+                        };
+                        sEventHandle.share(shareData);
+                    }
+                });
+                $(".comsharediv button").click(function () {
+                    sharedivcat(1);
+                });
+                //作品获取二维码生成海报
+                $(document).on('click', '.generate_poster,.fbcgshare', function () {
+                    $('.monthSwiper').remove();
+                    tabsSwiper.prependSlide(monthSwiperHmtl);
+                    tabsSwiper.update();
+                    if ($('.yd15') && $('.yd15').attr('data-zy') == 0) {
+                        $('.yd15').show();
+                    }
+                    var weibo_id = $(this).attr('data-weibo-id');
+                    var weibo_pic = $(this).attr('weibo-pic');
+                    if (!weibo_pic) {
+                        weibo_pic = $('.morenav').attr('weibo-pic');
+                    }
+                    var user_pic = $(this).attr('user-pic');
+                    var user_nickname = $(this).attr('data-nickname');
+                    var add_record = 0;
+                    if ($(this).hasClass('generate_poster')) {
+                        add_record = 1;
+                    }
+                    var share_type = 9;
+                    var date = new Date();
+                    var nowmonth = date.getMonth();
+                    //判断是否圈子主页里分享
+                    if ($(this).attr('data-share-type') == 'weibo') {
+                        share_type = 1;
+                        $('.fx-title02').find('span').text(user_nickname);
+                        nowindex = 0;
+                    } else {
+                        $('.fx-title02').find('span').text('《' + $('.circleTitle').text() + '》圈子');
+                        nowindex = nowmonth;
+                    }
+                    sharedivcat(1);
+                    $('.fx-headname').html($(this).attr('data-nickname'));
+                    $('.loading-div').show();
+                    $.post(U('Circle/Index/getRecode'), {share_type: share_type, share_id: weibo_id, weibo_pic: weibo_pic, user_pic: user_pic, class: 'circleweibo', add_record: add_record}, function (data) {
+                        //单独海报需要修改背景图
+                        if (nowindex == 13) {
+                            $('.bjtpimg').attr('src', data.weibo_pic);
+                        }
+                        if (!data.user_pic)
+                            data.user_pic = "/Public/static/artist/img/user_img01.jpg";
+                        //获取二维码，添加到.fx-ewm里去
+                        $('.fxqz_div_zp').find('.fx-ewm img').attr('src', data.qr_pic);
+                        $('.fxqz_div_zp').find('.fximg').attr('src', data.weibo_pic);
+                        $('.fxqz_div_zp').find('.fx-head01 > img').attr('src', data.user_pic);
+                        $('.fx-ewm01').find('img').attr('src', data.qr_pic);
+                        $('.shareEwm').attr('src', data.qr_pic);
+                        $(".fxqz_div_zp").toggle();
+                        $('.wbfximg').eq(nowindex).addClass('ischangesuc').css('display', 'block');
+                        isMonthPoster = false;
+                        if($('.page-current').attr('poster-year-id') && $('.page-current').attr('poster-year-id').indexOf($('.page-current').attr('data-id')) > -1){
+                            isMonthPoster = true;
+                        }
+                        if (!isMonthPoster) {
+                            tempDelSwiperArr = []; 
+                            if($('.monthSwiper').size() > 1){
+                                //移除其它日历海报
+                                for (var i = 0; i < 12; i++) {
+                                    if (i != nowmonth) {
+                                        tempDelSwiperArr.push(i);
+                                    }
+                                }
+                                tabsSwiper.removeSlide(tempDelSwiperArr);
+                            }
+                            nowindex = 0;
+                            tabsSwiper.slideTo(0, 1000, false);
+                        }else{
+                            tabsSwiper.slideTo(nowindex, 1000, false);
+                        }
+                        convert2canvas($('.fxqz_div_zp').find('.fx-bgdiv')[nowindex], $('.wbfximg').eq(nowindex), $('.fx-bgdiv').eq(nowindex));
+                        next_index = nowindex + 1;
+                        if (nowindex < $('.wbfximg').size() - 1 && !$('.wbfximg').eq(next_index).hasClass('ischangesuc')) {
+                            if (next_index == 0) {
+                                $('.bjtpimg').attr('src', data.weibo_pic);
+                            }
+                            convert2canvas($('.fxqz_div_zp').find('.fx-bgdiv')[next_index], $('.wbfximg').eq(next_index), $('.fx-bgdiv').eq(next_index));
+                            $('.wbfximg').eq(next_index).addClass('ischangesuc').css('display', 'block');
+                        }
+                        prev_index = nowindex - 1;
+                        if (prev_index >= 0 && !$('.wbfximg').eq(prev_index).hasClass('ischangesuc')) {
+                            if (prev_index == 0) {
+                                $('.bjtpimg').attr('src', data.weibo_pic);
+                            }
+                            convert2canvas($('.fxqz_div_zp').find('.fx-bgdiv')[prev_index], $('.wbfximg').eq(prev_index), $('.fx-bgdiv').eq(prev_index));
+                            $('.wbfximg').eq(prev_index).addClass('ischangesuc').css('display', 'block');
+                        }
+                    });
+                });
+                //圈子二维码邀请
+                $(document).on('click', '.open-hb,.brisk', function () {
+                    var type = $(this).attr('data-type');
+                    $('.poster_cirtitle').text("《" + $('.circleTitle').text() + "》");
+                    var circle_id = $('.circleTitle').attr("data-circle-id");
+                    $('.loading-div').show();
+                    if (type == 2) {
+                        var user_pic = $(this).attr("data-user-pic");
+                        var user_uid = $(this).attr("data-share-uid");
+                        //fxys_div
+                        $.post(U('Circle/Index/getRecode'), {share_type: 0, user_uid: user_uid, share_id: circle_id, user_pic: user_pic, class: 'circle'}, function (data) {
+                            $('.fxys_div').find('.fx-ewm img').attr('src', data.qr_pic);
+                            $('.fxys_div').find('.fx-head > img').attr('src', data.user_pic);
+                            $(".fxys_div").toggle();
+                            $('#fx_fyqr').css('display', 'block');
+                            convert2canvas($('.fxys_div').find('.fx-bg')[0], $('#fx_fyqr'), $('.fxys_div').find('.fx-bg'));
+                        });
+                    } else {
+                        var user_pic = $(this).attr("data-user-pic") != '' ? $(this).attr("data-user-pic") : $('.circleOwnerImg').attr('src');
+                        var circle_pic = $('.fxqz_new_div').find('.fximg').attr('src');
+                        $.post(U('Circle/Index/getRecode'), {share_type: 0, share_id: circle_id, user_pic: user_pic, class: 'circle', weibo_pic: circle_pic}, function (data) {
+                            $('.fxqz_new_div').find('.fx-ewm img').attr('src', data.qr_pic);
+                            $('.fxqz_new_div').find('.fx-head > img').attr('src', data.user_pic);
+                            $(".fxqz_new_div").toggle();
+                            $('#fxgzqr').css('display', 'block');
+                            convert2canvas($('.fxqz_new_div').find('.fx-bg')[0], $('#fxgzqr'), $('.fxqz_new_div').find('.fx-bg'));
+                        });
+                    }
+                    sharedivcat(1);
+                });
+                $('.com-fximg-close,.hbfxpy').on('click', function () {
+                    if ($('input[name="pub_suc"]').size() < 1) {
+                        $('.wbfximg').hide();
+                        $('.wbfximg').removeClass('ischangesuc');
+                        $('.fx-bgdiv').show();
+                        $(".fxqz_div_zp").toggle();
+                    }
+                    if ($(this).hasClass('hbfxpy')) {
+                        if ($('.tjgz_div').size() < 1 && $('input[name="pub_suc"]').size() < 1) {
+                            var shareData = {
+                                imgUrl: $('.fxhy-span').attr('weibo-pic'),
+                                sendFriendLink: $('.fxhy-span').attr('data-url'),
+                                tContent: $('.fxhy-span').attr('data-content'),
+                                tTitle: $('.fxhy-span').attr('data-title'),
+                                lineTitle: $('.fxhy-span').attr('data-linetitle')
+                            };
+                            sEventHandle.share(shareData);
+                        }
+//                        $('.fenxiangtupian').show();
+//                        $('.fenxiangtupian').click(function () {
+//                            $('.fenxiangtupian').hide();
+//                        });
+                    } else {
+                        if ($('input[name="pub_suc"]').size()) {
+                            window.location.href = $('input[name="pub_suc"]').val();
+                            return;
+                        }
+                    }
+                });
+
+                $('.fxys-close').on('click', function () {
+                    $('#fx_fyqr').attr('src', '');
+                    $('#fx_fyqr').hide();
+                    $('.fx-bg').show();
+                    $(".fxys_div").toggle();
+                });
+                $('.fxgz-close').on('click', function () {
+                    $('#fxgzqr').attr('src', '');
+                    $('#fxgzqr').hide();
+                    $('.fx-bg').show();
+                    $(".fxqz_new_div").toggle();
+                });
+                $('.userclock').on('click', function () {
+                    $('.userfxqz_div').hide();
+                    $('.userbg').show();
+                });
+                //个人中心生成海报
+                $(document).on('click', '.userhbfx', function () {
+                    var user_pic = $(this).attr('data-user-pic');
+                    var share_id = $(this).attr('data-share-uid');
+                    $('.userfxqz_div').find('.user-nickname').text($(this).attr("data-nickname"));
+                    var shareText = "向你推荐@<span>" + $(this).attr("data-nickname") + "</span><br><em><i>" + $(this).attr("data-follows") + "</i>&nbsp;关注&nbsp;&nbsp;|&nbsp;&nbsp;<i>" + $(this).attr("data-fans") + "</i>&nbsp;粉丝&nbsp;&nbsp;|&nbsp;&nbsp;<i>" + $(this).attr("data-weibo-count") + "</i>&nbsp;作品</em>";
+                    $('.loading-div').show();
+                    $.post(U('Circle/Index/getRecode'), {share_type: 5, share_id: share_id, user_pic: user_pic, class: 'user'}, function (data) {
+                        $('.userfxqz_div').find('.fx-ewm img').attr('src', data.qr_pic);
+                        $('.userfxqz_div').find('.fx-head > img').attr('src', data.user_pic);
+                        $('.userfxqz_div').find('.fximg').attr('src', '/Public/static/artist/img/img16.jpg');
+                        $('.userfxqz_div').find('.fx-content > p').html(shareText);
+                        $(".userfxqz_div").toggle();
+                        convert2canvas($('.userfxqz_div').find('.fx-bg')[0], $('#userzy'), $('.userfxqz_div').find('.fx-bg'));
+                    });
+                });
+            });
+</script>
